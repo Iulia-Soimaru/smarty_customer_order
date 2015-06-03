@@ -1,0 +1,30 @@
+/*orange: FF6D33*/
+/*light orange: F7D0A1*/
+
+
+body{
+  margin: 0;
+  padding: 0;
+}
+/**************    HEADER    *************/
+header{
+  line-height: 100px;
+  height: 100px;
+  width: 100%;
+  box-shadow: 4px 4px 4px #F7D0A1;
+}
+.logo, .nav{
+  display: inline-block;
+}
+.logo{
+  width: 180px;
+}
+.nav{
+  float: right;
+}
+.nav li{
+  list-style: none;
+  display: inline-block;
+}
+/**************    MAIN    ***************/
+/**************    FOOTER    *************/

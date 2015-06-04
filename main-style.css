@@ -6,6 +6,9 @@ body{
   margin: 0;
   padding: 0;
 }
+li{
+  list-style: none;
+}
 /**************    HEADER    *************/
 header{
   line-height: 100px;
@@ -24,7 +27,6 @@ header{
   float: right;
 }
 .nav li{
-  list-style: none;
   display: inline-block;
   padding-left: 20px;
 }
@@ -38,8 +40,19 @@ header{
 }
 .order-description{
   border: 1px solid blue;
+  text-align: center;
 }
 .order-description div{
   border: 1px solid red;
+}
+.service-image img{
+
+}
+.service-info a{
+  text-decoration: none;
+  background: yellow;
+}
+.service-addition{
+  display: inline-block;
 }
 /**************    FOOTER    *************/

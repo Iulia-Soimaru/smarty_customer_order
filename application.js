@@ -46,10 +46,12 @@ $(document).ready(function() {
       dataType: "json"
     }).done(function(response){
       var newAddress = $('.input-address').val()
-      $('.customer-address').text(newAddress)
+      $('.customer-address').text(newAddress);
+      $(".input-address").val('')
     }).fail(function(response){
       console.log(response)
     })
+
   });
 
 
@@ -66,7 +68,7 @@ $(document).ready(function() {
     $('.service-day').text(response.service.day);
     $('.service-time').text(response.service.time);
     $('.service-fee').text("Fee: $" + response.service.fee);
-    $('.total-price span').text(response.service.price)
+    $('.total-price span').text(response.service.price + response.service.fee)
   }).fail(function(response){
     alert(response);
   })

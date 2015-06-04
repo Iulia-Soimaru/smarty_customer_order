@@ -1,6 +1,10 @@
 /*orange: FF6D33*/
+/*between orange F5B66C*/
 /*light orange: F7D0A1*/
 
+/*left block orange F0DAC0
+right block orange  F2CFA5
+*/
 
 body{
   margin: 0;
@@ -8,6 +12,10 @@ body{
 }
 li{
   list-style: none;
+}
+.bold{
+  font-weight: bold;
+  font-size: 20px;
 }
 /**************    HEADER    *************/
 header{
@@ -45,9 +53,27 @@ header{
 .order-description div{
   /*border: 1px solid red;*/
 }
-.service-image, .service-info{
-  border-right: 1px solid orange;
-  box-shadow: 4px 4px 4px #F7D0A1;
+.service-info, .customer-info{
+  min-height: 410px;
+  padding: 20px;
+}
+
+/* customer info */
+.customer-info{
+  background: #F0DAC0;
+}
+
+/* service info */
+.service-info{
+  background: #FAEFE1;
+}
+.service-info img, .service-info ul{
+  display: inline-block;
+}
+.service-info img{
+  width: 200px;
+  height: 200px;
+  vertical-align: top;
 }
 .service-info a{
   text-decoration: none;
@@ -56,9 +82,13 @@ header{
 .service-addition{
   display: inline-block;
 }
+
+
+/* map */
 #map-canvas{
   background: #ccc;
   width: 300px;
   height: 240px;
+  margin: 0 auto;
 }
 /**************    FOOTER    *************/

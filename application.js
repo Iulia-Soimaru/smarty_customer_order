@@ -55,7 +55,7 @@ $(document).ready(function() {
   // mobile navigation
   $('.mobile-nav').on('click', function(){
     var i = $(this).find('.fa')[0];
-    var ul = $('.nav')[0];
+    var ul = $(document).find('.nav');
     console.log(ul)
     if (i.className == "fa fa-bars") {
       i.className = "fa fa-times";
@@ -64,7 +64,6 @@ $(document).ready(function() {
       i.className = "fa fa-bars";
       ul.removeClass('full-nav');
     }
-    // $('.mobile-nav li').append('<i class="fa fa-times"></li>')
 
   });
 

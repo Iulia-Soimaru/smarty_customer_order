@@ -47,12 +47,16 @@
           <p class="customer-name">Iulia Soimaru</p>
           <p class="customer-address">633 Folsom Str, San Francisco CA</p>
         </ul>
-        <div id="map-canvas col-md-12"></div>
+        <form action="/" name="get-address" method="get">
+          <input class="input-address" name="address" />
+          <input class="submit-address" type="submit" value="Go!" />
+        </form>
+        <div id="map-canvas" class="col-md-12"></div>
       </div>
     </div>
   </section>
   <footer></footer>
 
-  <script src="application.js"></script>
+  <script type="text/javascript" src="application.js"></script>
 </body>
 </html>

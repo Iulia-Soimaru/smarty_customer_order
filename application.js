@@ -1,16 +1,55 @@
-$(document).ready(function(){
-  // create a map and display it
-  function initialize() {
-    geoCoder = new google.maps.Geocoder();              // create geocoder
-    var latlng = new google.maps.LatLng(37.7749, -122.4194);     // set default lat/long for sf
-    var mapOptions = {
-      zoom: 15,
-      center: latlng
+var geocoder, map, mapCanvas;
+
+// create a map and display it
+function initialize() {
+  mapCanvas = document.getElementById('map-canvas');
+  geoCoder = new google.maps.Geocoder();              // create geocoder
+  var latlng = new google.maps.LatLng(37.7749, -122.4194);     // set default lat/long for sf
+  var mapOptions = {
+    zoom: 15,
+    center: latlng
+  }
+  map = new google.maps.Map(mapCanvas, mapOptions); // create new map in the map-canvas div
+} //close initialize function
+
+// geocode an address and show pointer on the map
+function codeAddress(address) {
+  geoCoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);      // center the map on address
+      var marker = new google.maps.Marker({         // place a marker on the map at the address
+        map: map,
+        position: results[0].geometry.location
+      });
+    } else {
+      console.log('Unsuccessfull ' + status);
     }
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); // create new map in the map-canvas div
-  } //close initialize function
+  });
+} //close codeAddress function
+
+google.maps.event.addDomListener(window, 'load', initialize);   // setup initial map
+
+$(document).ready(function() {
+  console.log(initialize)
+
+  // get map button functionality
+  $(".submit-address").click(function(event){
+    event.preventDefault();
+    var address = $(".input-address").val();         // grab the address from the input field
+    codeAddress(address);                   // geocode the address
+  });
 
 
-  google.maps.event.addDomListener(window, 'load', initialize);   // setup initial map
-});
 
+  // render customers and order data
+  // $.ajax({
+  //   url: "data.json",
+  //   dataType: "json"
+  // }).done(function(response){
+  //   // console.log(response.customer);
+  //   $('#name').text(response.customer.name);
+  //   $('#price').text("$"+ response.order.price)
+  // })
+
+
+}); // close document.ready

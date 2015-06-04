@@ -4,12 +4,16 @@ var geocoder, map, mapCanvas;
 function initialize() {
   mapCanvas = document.getElementById('map-canvas');
   geoCoder = new google.maps.Geocoder();              // create geocoder
-  var latlng = new google.maps.LatLng(37.7749, -122.4194);     // set default lat/long for sf
+  var latlng = new google.maps.LatLng(37.7846, -122.3974);     // set default lat/long for sf
   var mapOptions = {
     zoom: 15,
     center: latlng
   }
   map = new google.maps.Map(mapCanvas, mapOptions); // create new map in the map-canvas div
+  var marker = new google.maps.Marker({
+        map: map,
+        position: latlng
+      });
 } //close initialize function
 
 // geocode an address and show pointer on the map

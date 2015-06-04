@@ -1,0 +1,13 @@
+{
+  "customer": {
+    "name": "Iulia Soimaru",
+    "address": "633 Folsom Street"
+  },
+  "service": {
+    "name": "Bath cleaning",
+    "day": "June 6th",
+    "time": "3:00 PM",
+    "fee": 4.55,
+    "price": 50
+  }
+}

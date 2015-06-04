@@ -34,26 +34,42 @@ function changeAddress(address) {
 google.maps.event.addDomListener(window, 'load', initialize);   // setup initial map
 
 $(document).ready(function() {
-  console.log(initialize)
 
   // get map button functionality
   $(".submit-address").click(function(event){
     event.preventDefault();
     var address = $(".input-address").val();         // grab the address from the input field
     changeAddress(address);                   // geocode the address
+
+    $.ajax({
+      url: "data.json",
+      dataType: "json"
+    }).done(function(response){
+      var newAddress = $('.input-address').val()
+      $('.customer-address').text(newAddress)
+    }).fail(function(response){
+      console.log(response)
+    })
   });
 
 
 
-  // render customers and order data
-  // $.ajax({
-  //   url: "data.json",
-  //   dataType: "json"
-  // }).done(function(response){
-  //   // console.log(response.customer);
-  //   $('#name').text(response.customer.name);
-  //   $('#price').text("$"+ response.order.price)
-  // })
+  //render customers and order data
+  $.ajax({
+    url: "data.json",
+    dataType: "json",
+  }).done(function(response){
+    // console.log(response.customer);
+    $('.customer-name').text(response.customer.name);
+    $('.customer-address').text(response.customer.address);
+    $('.service-name').text(response.service.name);
+    $('.service-day').text(response.service.day);
+    $('.service-time').text(response.service.time);
+    $('.service-fee').text("Fee: $" + response.service.fee);
+    $('.total-price span').text(response.service.price)
+  }).fail(function(response){
+    alert(response);
+  })
 
 
   // mobile navigation

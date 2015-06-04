@@ -25,6 +25,11 @@ header{
 .nav li{
   list-style: none;
   display: inline-block;
+  padding-left: 20px;
+}
+.nav li:hover{
+  color: #FF6D33;
+  transform: scale(1.3);
 }
 /**************    MAIN    ***************/
 /**************    FOOTER    *************/

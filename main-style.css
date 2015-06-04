@@ -13,9 +13,15 @@ body{
 li{
   list-style: none;
 }
+a{
+  text-decoration: none;
+}
 .bold{
   font-weight: bold;
   font-size: 20px;
+}
+section{
+  margin: 80px auto;
 }
 /**************    HEADER    *************/
 header{
@@ -25,13 +31,13 @@ header{
   box-shadow: 4px 4px 4px #F7D0A1;
   margin-bottom: 50px;
 }
-.logo, .nav{
+.logo, .nav, .mobile-nav{
   display: inline-block;
 }
 .logo{
   width: 180px;
 }
-.nav{
+.nav, .mobile-nav{
   float: right;
 }
 .nav li{
@@ -41,6 +47,9 @@ header{
 .nav li:hover{
   color: #FF6D33;
   transform: scale(1.3);
+}
+.mobile-nav{
+  display: none;
 }
 /**************    MAIN SECTION   ************/
 .block{
@@ -54,7 +63,7 @@ header{
   /*border: 1px solid red;*/
 }
 .service-info, .customer-info{
-  min-height: 410px;
+  min-height: 440px;
   padding: 20px;
 }
 
@@ -67,7 +76,7 @@ header{
 .service-info{
   background: #FAEFE1;
 }
-.service-info img, .service-info ul{
+.service-info img, .service-info .service-main{
   display: inline-block;
 }
 .service-info img{
@@ -75,12 +84,22 @@ header{
   height: 200px;
   vertical-align: top;
 }
-.service-info a{
-  text-decoration: none;
-  background: yellow;
+.service-add{
+  margin: 20px;
 }
 .service-addition{
   display: inline-block;
+}
+.service-info a{
+  color: white !important;
+}
+.button{
+  background: green;
+  width: 140px;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  margin: 25px auto;
 }
 
 
@@ -89,6 +108,17 @@ header{
   background: #ccc;
   width: 300px;
   height: 240px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
+/**************    FEEDBACK    *************/
 /**************    FOOTER    *************/
+/**************    MOBILE    *************/
+@media only screen and (min-width: 320px) and (max-width: 520px){
+  .nav{
+    display: none;
+  }
+  .mobile-nav{
+    display: block;
+    margin: 0 30px;
+  }
+}

@@ -4,38 +4,43 @@
   <meta charset="UTF-8">
   <title>Customer Order</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.css">
   <link rel="stylesheet" href="main-style.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body>
   <header>
-    <img class="logo col-md-6" src="images/Cleanify-logo.png" alt="">
+    <img class="logo col-md-5" src="images/Cleanify-logo.png" alt="">
     <ul class="nav col-md-4">
       <li>About</li>
       <li>Products</li>
       <li>Contact Us</li>
       <li>Bascket</li>
     </ul>
+    <ul class="mobile-nav">
+      <li><i class="fa fa-bars"></i></li>
+    </ul>
   </header>
-  <section>
+  <section class="main">
     <p class="main-info container">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime provident saepe odit alias velit, reiciendis tempora minima magnam, repellendus harum non dolores asperiores et minus iure inventore corporis rerum in? Lorem</p>
     <div class="order-description col-md-12 block">
       <div class="service-info col-md-6 block">
         <img class="" src="http://www.fantasticcleaningllc.com/images/cleaning-lady.gif" alt="">
-        <ul>
+        <ul class="service-main">
           <li class="service-name bold">Name</li>
           <li class="service day bold">Day</li>
           <li class="service time bold">Time</li>
           <li class="service-fee">Fee</li>
-          <li class="service-addition">
+        </ul>
+        <ul class="service-add">
+          <li class="service-addition button">
             <a class="" href="">Something +$10</a>
           </li>
-          <li class="service-addition">
+          <li class="service-addition button">
             <a class="" href="">Something +$25</a>
           </li>
-          <li class="total-price">
+          <li class="total-price button">
             <div class="" href="">Final price is $50</div>
           </li>
         </ul>
@@ -53,7 +58,19 @@
       </div>
     </div>
   </section>
-  <footer></footer>
+  <section class="feedback">
+    <input type="text">
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="submit" value="Send">
+  </section>
+  <footer>
+    <ul class="social">
+      <li>LinkedIn</li>
+      <li>LinkedIn</li>
+      <li>LinkedIn</li>
+      <li>LinkedIn</li>
+    </ul>
+  </footer>
 
   <script type="text/javascript" src="application.js"></script>
 </body>

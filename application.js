@@ -13,7 +13,7 @@ function initialize() {
 } //close initialize function
 
 // geocode an address and show pointer on the map
-function codeAddress(address) {
+function changeAddress(address) {
   geoCoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);      // center the map on address
@@ -25,7 +25,7 @@ function codeAddress(address) {
       console.log('Unsuccessfull ' + status);
     }
   });
-} //close codeAddress function
+} //close changeAddress function
 
 google.maps.event.addDomListener(window, 'load', initialize);   // setup initial map
 
@@ -36,7 +36,7 @@ $(document).ready(function() {
   $(".submit-address").click(function(event){
     event.preventDefault();
     var address = $(".input-address").val();         // grab the address from the input field
-    codeAddress(address);                   // geocode the address
+    changeAddress(address);                   // geocode the address
   });
 
 

@@ -39,14 +39,15 @@ header{
   padding: 0;
 }
 .order-description{
-  border: 1px solid blue;
+  /*border: 1px solid blue;*/
   text-align: center;
 }
 .order-description div{
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
-.service-image img{
-
+.service-image, .service-info{
+  border-right: 1px solid orange;
+  box-shadow: 4px 4px 4px #F7D0A1;
 }
 .service-info a{
   text-decoration: none;

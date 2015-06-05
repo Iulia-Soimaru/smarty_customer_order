@@ -25,9 +25,6 @@ a{
   font-weight: bold;
   font-size: 20px;
 }
-section{
-  margin: 80px auto;
-}
 /**************    HEADER    *************/
 header{
   line-height: 100px;
@@ -57,6 +54,12 @@ header{
   display: none;
 }
 /**************    MAIN SECTION   ************/
+section{
+  margin: 80px auto;
+}
+.order-description{
+  margin: 0 auto;
+}
 .service-info, .customer-info{
   min-height: 500px;
   padding: 20px;
@@ -103,12 +106,6 @@ form{
   width: 300px;
   height: 240px;
   margin: 10px auto;
-}
-
-
-.place-order{
-  text-align: center;
-  padding: 30px;
 }
 
 /**************    MOBILE    *************/

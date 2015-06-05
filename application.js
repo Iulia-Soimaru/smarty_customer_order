@@ -2,7 +2,7 @@ var geocoder, map, mapCanvas;
 
 // create a map and display it
 function initialize() {
-  mapCanvas = document.getElementById('map-canvas');
+  mapCanvas = document.getElementById("map-canvas");
   geoCoder = new google.maps.Geocoder();              // create geocoder
   var latlng = new google.maps.LatLng(37.7846, -122.3974);     // set default lat/long for sf
   var mapOptions = {
@@ -18,7 +18,7 @@ function initialize() {
 
 // geocode an address and show pointer on the map
 function changeAddress(address) {
-  geoCoder.geocode( { 'address': address}, function(results, status) {
+  geoCoder.geocode( { "address": address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.setCenter(results[0].geometry.location);      // center the map on address
       var marker = new google.maps.Marker({         // place a marker on the map at the address
@@ -26,12 +26,12 @@ function changeAddress(address) {
         position: results[0].geometry.location
       });
     } else {
-      console.log('Unsuccessfull ' + status);
+      console.log("Unsuccessfull " + status);
     }
   });
 } //close changeAddress function
 
-google.maps.event.addDomListener(window, 'load', initialize);   // setup initial map
+google.maps.event.addDomListener(window, "load", initialize);   // setup initial map
 
 $(document).ready(function() {
 
@@ -46,9 +46,9 @@ $(document).ready(function() {
       url: "data.json",
       dataType: "json"
     }).done(function(response){
-      var newAddress = $('.input-address').val()
-      $('.customer-address').text(newAddress);
-      $(".input-address").val('')
+      var newAddress = $(".input-address").val()
+      $(".customer-address").text(newAddress);
+      $(".input-address").val("");
     }).fail(function(response){
       console.log(response)
     })
@@ -63,54 +63,54 @@ $(document).ready(function() {
     dataType: "json",
   }).done(function(response){
     // console.log(response.customer);
-    $('.customer-name').text(response.customer.name);
-    $('.customer-address').text(response.customer.address);
-    $('.service-name span').text(response.service.name);
-    $('.service-day span').text(response.service.day);
-    $('.service-time span').text(response.service.time);
-    $('.service-fee span').text(response.service.fee);
-    $('.total-price span').text(response.service.price + response.service.fee)
+    $(".customer-name").text(response.customer.name);
+    $(".customer-address").text(response.customer.address);
+    $(".service-name span").text(response.service.name);
+    $(".service-day span").text(response.service.day);
+    $(".service-time span").text(response.service.time);
+    $(".service-fee span").text(response.service.fee);
+    $(".total-price span").text(response.service.price + response.service.fee)
   }).fail(function(response){
     alert(response);
   })
 
   //toggle edit form
-  $('.customer-edit i').on('click', function(){
-    $('form').toggle();
+  $(".customer-edit i").on("click", function(){
+    $("form").toggle();
   });
 
 
   // mobile navigation
-  $('.mobile-nav').on('click', function(){
-    var i = $(this).find('.fa')[0];
-    var ul = $(document).find('.nav');
+  $(".mobile-nav").on("click", function(){
+    var i = $(this).find(".fa")[0];
+    var ul = $(document).find(".nav");
     console.log(ul)
     if (i.className == "fa fa-bars") {
       i.className = "fa fa-times";
-      ul.addClass('full-nav');
+      ul.addClass("full-nav");
     } else {
       i.className = "fa fa-bars";
-      ul.removeClass('full-nav');
+      ul.removeClass("full-nav");
     }
 
   });
 
 
   //drag and drop
-  var dropZone = document.querySelector('.total-price')
-  var dragElements = $('.service-addition');
+  var dropZone = document.querySelector(".total-price")
+  var dragElements = $(".service-addition");
   var elementDragged = null;
   var price = 0;
 
-  dragElements.on('dragstart', function(e){
+  dragElements.on("dragstart", function(e){
     elementDragged = this;
-    price = $(this).find('span').text();
-    $('.total-price .button-final').css({"background": "#1C694E"})
+    price = $(this).find("span").text();
+    $(".total-price .button-final").css({"background": "#1C694E"})
   });
 
 
 
-  dropZone.addEventListener('dragover', function(e){
+  dropZone.addEventListener("dragover", function(e){
     e.preventDefault();
 
     e.dataTransfer.dropEffect = "move";
@@ -119,14 +119,14 @@ $(document).ready(function() {
   });
 
 
-  dropZone.addEventListener('drop', function(e){
+  dropZone.addEventListener("drop", function(e){
     e.preventDefault();
-    $(this).find('.button-final').css({"background": "#2BA178"})
+    $(this).find(".button-final").css({"background": "#2BA178"})
 
-    var currentPrice = $(this).find('span').text()
+    var currentPrice = $(this).find("span").text()
     var newPrice = parseFloat(currentPrice) + parseInt(price)
 
-    $(this).find('span').text(newPrice)
+    $(this).find("span").text(newPrice)
 
     return false;
   });

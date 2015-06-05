@@ -63,8 +63,8 @@ $(document).ready(function() {
     dataType: "json",
   }).done(function(response){
     // console.log(response.customer);
-    $('.customer-name span').text(response.customer.name);
-    $('.customer-address span').text(response.customer.address);
+    $('.customer-name').text(response.customer.name);
+    $('.customer-address').text(response.customer.address);
     $('.service-name span').text(response.service.name);
     $('.service-day span').text(response.service.day);
     $('.service-time span').text(response.service.time);
@@ -73,6 +73,11 @@ $(document).ready(function() {
   }).fail(function(response){
     alert(response);
   })
+
+  //toggle edit form
+  $('.customer-edit i').on('click', function(){
+    $('form').toggle();
+  });
 
 
   // mobile navigation
@@ -100,7 +105,7 @@ $(document).ready(function() {
   dragElements.on('dragstart', function(e){
     elementDragged = this;
     price = $(this).find('span').text();
-    $('.total-price').addClass('over')
+    $('.total-price .button-final').css({"background": "#1C694E"})
   });
 
 
@@ -116,7 +121,7 @@ $(document).ready(function() {
 
   dropZone.addEventListener('drop', function(e){
     e.preventDefault();
-    $(this).removeClass('over')
+    $(this).find('.button-final').css({"background": "#2BA178"})
 
     var currentPrice = $(this).find('span').text()
     var newPrice = parseFloat(currentPrice) + parseInt(price)

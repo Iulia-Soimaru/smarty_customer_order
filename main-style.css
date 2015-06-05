@@ -12,6 +12,9 @@ body{
   padding: 0;
   color: #636363;
 }
+ul{
+  padding: 0;
+}
 li{
   list-style: none;
 }
@@ -54,35 +57,14 @@ header{
   display: none;
 }
 /**************    MAIN SECTION   ************/
-.block{
-  padding: 0;
-}
-.order-description{
-
-}
-.order-description div{
-  /*border: 1px solid red;*/
-}
 .service-info, .customer-info{
-  min-height: 470px;
+  min-height: 500px;
   padding: 20px;
-}
-
-/* customer info */
-.customer-info{
-  background: #E8E8E8;
-}
-
-/* service info */
-.service-info{
-  background: #E8E8E8;
-}
-.service-add, .service-main{
-  display: inline-block;
-}
-.service-add{
   text-align: center;
+  background: #E8E8E8;
 }
+/* service info */
+
 .service-addition{
   display: inline-block;
 }
@@ -93,16 +75,26 @@ header{
   background: #FAC084;
   width: 140px;
   height: 40px;
-  line-height: 40px;
+  line-height: 35px;
   color: white;
   margin: 25px auto;
+  border: 2px dotted #636363;
 }
-.total-price{
+.total-price .button-final{
+  width: 200px;
+  height: 80px;
+  line-height: 80px;
   background: #2BA178;
+  color: white;
+  margin: 45px auto;
 }
-.over{
-  background: #1C694E;
+
+
+/* customer info */
+form{
+  display: none;
 }
+
 
 
 /* map */
@@ -113,11 +105,11 @@ header{
   margin: 10px auto;
 }
 
+
 .place-order{
   text-align: center;
   padding: 30px;
 }
-/**************    FOOTER    *************/
 
 /**************    MOBILE    *************/
 @media only screen and (min-width: 320px) and (max-width: 520px){

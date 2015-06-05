@@ -26,7 +26,7 @@
   <section class="main container">
     <div class="order-description col-md-12 block">
       <div class="service-info block col-md-5">
-        <h2 class="container">Service information</h2>
+        <h2>Service information</h2>
         <ul class="service-main">
           <li class="service-name bold">Service: <span></span></li>
           <li class="service-day bold">Date: <span></span></li>
@@ -35,25 +35,27 @@
         </ul>
         <div class="service-add">
           <ul>
+            <li class="coupon-info">Drag coupon to the final price</li>
             <li class="service-addition button" draggable="true">
               <a class="" href="">Something $<span>10</span></a>
             </li>
             <li class="service-addition button" draggable="true">
               <a class="" href="">Something $<span>25</span></a>
             </li>
+            <li class="total-price">
+              <div class="button-final" href="">Final price $<span></span></div>
+            </li>
           </ul>
 
-          <li class="total-price button">
-            <div class="" href="">Final price $<span></span></div>
-          </li>
         </div>
       </div>
       <div class="block col-md-2"></div>
       <div class="customer-info block col-md-5">
         <h2>Customer information</h2>
         <ul>
-          <p class="customer-name bold"></p>
-          <p class="customer-address bold"></p>
+          <li class="customer-name bold"></li>
+          <li class="customer-address bold"></li>
+          <li class="customer-edit"><i class="fa fa-pencil-square-o"></i></li>
         </ul>
         <form action="/" name="get-address" method="get">
           <input class="input-address" name="address" />

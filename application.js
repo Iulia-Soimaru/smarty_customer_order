@@ -63,12 +63,12 @@ $(document).ready(function() {
     dataType: "json",
   }).done(function(response){
     // console.log(response.customer);
-    $('.customer-name').text(response.customer.name);
-    $('.customer-address').text(response.customer.address);
-    $('.service-name').text(response.service.name);
-    $('.service-day').text(response.service.day);
-    $('.service-time').text(response.service.time);
-    $('.service-fee').text("Fee: $" + response.service.fee);
+    $('.customer-name span').text(response.customer.name);
+    $('.customer-address span').text(response.customer.address);
+    $('.service-name span').text(response.service.name);
+    $('.service-day span').text(response.service.day);
+    $('.service-time span').text(response.service.time);
+    $('.service-fee span').text(response.service.fee);
     $('.total-price span').text(response.service.price + response.service.fee)
   }).fail(function(response){
     alert(response);
@@ -100,6 +100,7 @@ $(document).ready(function() {
   dragElements.on('dragstart', function(e){
     elementDragged = this;
     price = $(this).find('span').text();
+    $('.total-price').addClass('over')
   });
 
 
@@ -109,7 +110,6 @@ $(document).ready(function() {
 
     e.dataTransfer.dropEffect = "move";
 
-    $(this).addClass('over')
     return false;
   });
 

@@ -1,6 +1,7 @@
 /*orange: FF6D33*/
 /*between orange F5B66C*/
 /*light orange: F7D0A1*/
+/*brown 4A1313*/
 
 /*left block orange F0DAC0
 right block orange  F2CFA5
@@ -9,6 +10,7 @@ right block orange  F2CFA5
 body{
   margin: 0;
   padding: 0;
+  color: #636363;
 }
 li{
   list-style: none;
@@ -56,29 +58,30 @@ header{
   padding: 0;
 }
 .order-description{
-  /*border: 1px solid blue;*/
-  text-align: center;
+
 }
 .order-description div{
   /*border: 1px solid red;*/
 }
 .service-info, .customer-info{
-  min-height: 440px;
+  min-height: 470px;
   padding: 20px;
 }
 
 /* customer info */
 .customer-info{
-  background: #D6D4D2;
+  background: #E8E8E8;
 }
 
 /* service info */
 .service-info{
   background: #E8E8E8;
 }
-
+.service-add, .service-main{
+  display: inline-block;
+}
 .service-add{
-  margin: 20px;
+  text-align: center;
 }
 .service-addition{
   display: inline-block;
@@ -87,7 +90,7 @@ header{
   color: white !important;
 }
 .button{
-  background: #F7D0A1;
+  background: #FAC084;
   width: 140px;
   height: 40px;
   line-height: 40px;
@@ -95,10 +98,10 @@ header{
   margin: 25px auto;
 }
 .total-price{
-  background: #5cb85c;
+  background: #2BA178;
 }
 .over{
-  background: blue;
+  background: #1C694E;
 }
 
 
@@ -133,5 +136,8 @@ header{
   }
   .full-nav, .full-nav li{
     display: block;
+  }
+  .service-info{
+    text-align: center;
   }
 }

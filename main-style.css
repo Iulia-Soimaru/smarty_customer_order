@@ -69,21 +69,14 @@ header{
 
 /* customer info */
 .customer-info{
-  background: #F0DAC0;
+  background: #D6D4D2;
 }
 
 /* service info */
 .service-info{
-  background: #FAEFE1;
+  background: #E8E8E8;
 }
-.service-info img, .service-info .service-main{
-  display: inline-block;
-}
-.service-info img{
-  width: 200px;
-  height: 200px;
-  vertical-align: top;
-}
+
 .service-add{
   margin: 20px;
 }
@@ -94,12 +87,15 @@ header{
   color: white !important;
 }
 .button{
-  background: green;
+  background: #F7D0A1;
   width: 140px;
   height: 40px;
   line-height: 40px;
   color: white;
   margin: 25px auto;
+}
+.total-price{
+  background: #5cb85c;
 }
 .over{
   background: blue;
@@ -128,9 +124,6 @@ header{
   .mobile-nav{
     display: block;
     margin: 0 30px;
-  }
-  .service-info img{
-    display: none;
   }
   .full-nav{
     background: white;

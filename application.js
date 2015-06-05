@@ -93,23 +93,16 @@ $(document).ready(function() {
 
   //drag and drop
   var dropZone = document.querySelector('.total-price')
-  var dragElements = document.querySelector('.service-addition');
+  var dragElements = $('.service-addition');
   var elementDragged = null;
+  var price = 0;
 
-  for(var i=0; i < dragElements.length; i++){
-    dragElements[i].addEventListener('dragstart', function(e){
-      e.dataTransfer.effectAllowed = "move";
-      console.log(this)
-      e.dataTransfer.setData('price', this.innerHTML);
-      elementDragged = this;
-    });
-
-    dragElements[i].addEventListener('dragend', function(e){
-      elementDragged = null;
-    });
+  dragElements.on('dragstart', function(e){
+    elementDragged = this;
+    price = $(this).find('span').text();
+  });
 
 
-  }; //close for loop
 
   dropZone.addEventListener('dragover', function(e){
     e.preventDefault();
@@ -120,19 +113,13 @@ $(document).ready(function() {
   });
 
 
-  dropZone.addEventListener('dragenter', function(e){
-    // this.addClass("over");
-  });
-
-
   dropZone.addEventListener('drop', function(e){
     e.preventDefault();
 
-    this.className = "";
-    this.innerHTML = "dropped";
+    var currentPrice = $(this).find('span').text()
+    var newPrice = parseFloat(currentPrice) + parseInt(price)
 
-    // elementDragged.remove();
-    elementDragged = null;
+    $(this).find('span').text(newPrice)
 
     return false;
   });

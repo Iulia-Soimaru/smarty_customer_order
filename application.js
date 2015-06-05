@@ -109,12 +109,14 @@ $(document).ready(function() {
 
     e.dataTransfer.dropEffect = "move";
 
+    $(this).addClass('over')
     return false;
   });
 
 
   dropZone.addEventListener('drop', function(e){
     e.preventDefault();
+    $(this).removeClass('over')
 
     var currentPrice = $(this).find('span').text()
     var newPrice = parseFloat(currentPrice) + parseInt(price)

@@ -41,6 +41,7 @@ $(document).ready(function() {
     var address = $(".input-address").val();         // grab the address from the input field
     changeAddress(address);                   // geocode the address
 
+    //update data in customer's address
     $.ajax({
       url: "data.json",
       dataType: "json"
@@ -88,5 +89,53 @@ $(document).ready(function() {
     }
 
   });
+
+
+  //drag and drop
+  var dropZone = document.querySelector('.total-price')
+  var dragElements = document.querySelector('.service-addition');
+  var elementDragged = null;
+
+  for(var i=0; i < dragElements.length; i++){
+    dragElements[i].addEventListener('dragstart', function(e){
+      e.dataTransfer.effectAllowed = "move";
+      console.log(this)
+      e.dataTransfer.setData('price', this.innerHTML);
+      elementDragged = this;
+    });
+
+    dragElements[i].addEventListener('dragend', function(e){
+      elementDragged = null;
+    });
+
+
+  }; //close for loop
+
+  dropZone.addEventListener('dragover', function(e){
+    e.preventDefault();
+
+    e.dataTransfer.dropEffect = "move";
+
+    return false;
+  });
+
+
+  dropZone.addEventListener('dragenter', function(e){
+    // this.addClass("over");
+  });
+
+
+  dropZone.addEventListener('drop', function(e){
+    e.preventDefault();
+
+    this.className = "";
+    this.innerHTML = "dropped";
+
+    // elementDragged.remove();
+    elementDragged = null;
+
+    return false;
+  });
+
 
 }); // close document.ready
